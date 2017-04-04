@@ -1,17 +1,17 @@
-# PV
+# pvjs
 
 This is an npm module design to perform common uses in the pVelocity JSAPI2 framework.
 
 ##Getting Started
 
-Install the ``pv`` module.
+Install the ``pvjs`` module.
 
-    npm install --save pv
+    npm install --save pvjs
 
 Use the require statement to load the module into the global namespace.
 
 ```js
-require('pv');
+require('pvjs');
 ```
 
 ##License

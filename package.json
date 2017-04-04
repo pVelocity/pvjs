@@ -1,14 +1,14 @@
 {
-  "name": "pv",
+  "name": "pvjs",
   "version": "1.0.0",
   "description": "This is an npm module design to perform common uses in the pVelocity JSAPI2 framework.",
-  "main": "PV.js",
+  "main": "pvjs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pVelocity/PV.git"
+    "url": "git+https://github.com/pVelocity/pvjs.git"
   },
   "keywords": [
     "pVelocity",
@@ -18,7 +18,7 @@
   "author": "\"Allen Allen Chung <allen.chung@pvelocity.com> (http://www.pvelocity.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pVelocity/PV/issues"
+    "url": "https://github.com/pVelocity/pvjs/issues"
   },
-  "homepage": "https://github.com/pVelocity/PV#readme"
+  "homepage": "https://github.com/pVelocity/pvjs#readme"
 }
