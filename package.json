@@ -2,7 +2,7 @@
   "name": "pvjs",
   "version": "1.0.0",
   "description": "This is an npm module design to perform common uses in the pVelocity JSAPI2 framework.",
-  "main": "pvjs.js",
+  "main": "PV.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
