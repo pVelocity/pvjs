@@ -2,7 +2,7 @@
 
 This is an npm module design to perform common uses in the pVelocity JSAPI2 framework.
 
-##Getting Started
+## Getting Started
 
 Install the ``pvjs`` module.
 
@@ -14,7 +14,7 @@ Use the require statement to load the module into the global namespace.
 require('pvjs');
 ```
 
-##License
+## License
 
 Copyright (c) 2016, pVelocity Inc
 
