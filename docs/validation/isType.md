@@ -1,8 +1,8 @@
 ### ``isType(t)``
 Checks if ``t`` an instance of ``Type``.
 `Type` can be one of the following:
-- `Array`
-- `Boolean`
+*`Array`
+* `Boolean`
 - `Database`
 - `Date`
 - `Element`
