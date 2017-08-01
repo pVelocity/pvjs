@@ -38,20 +38,20 @@ var root = (typeof window === 'undefined') ? global : window;
     };
 
     var types = [
-        'Null',
-        'Undefined',
-        'Object',
         'Array',
-        'String',
-        'Number',
         'Boolean',
-        'Function',
-        'RegExp',
-        'Element',
-        'NaN',
-        'Infinity',
+        'Database',
         'Date',
-        'Database'
+        'Element',
+        'Function',
+        'Infinity',
+        'NaN',
+        'Null',
+        'Number',
+        'Object',
+        'RegExp',
+        'String',
+        'Undefined'
     ];
 
     var generateMethod = function(t) {
@@ -754,7 +754,7 @@ var root = (typeof window === 'undefined') ? global : window;
         }
         return yyyy + '-' + mm + '-' + dd + ' ' + hr + ':' + min + ':' + ss + ':' + ms;
     };
-    root.PV.validateEmail = function(inputText) {
+    root.PV.isEmail = function(inputText) {
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (inputText.match(mailformat)) {
             return true;
