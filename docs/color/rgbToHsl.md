@@ -2,11 +2,11 @@
 Converts ``r``, ``g``, ``b`` to a color hsl object
 
 ```js
-'rgb(255, 255, 255)' => {
-							h: 0,
-							s: 0,
-							l: 100
-						}
+'rgb(255, 255, 255)' =>	{
+				h: 0,
+				s: 0,
+				l: 100
+			}
 ```
 
 - `r` `<Number>`

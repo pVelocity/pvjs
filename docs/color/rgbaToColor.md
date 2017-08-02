@@ -1,5 +1,5 @@
 ### ``rgbaToColor(r, g, b, a)``
-Converts ``r``, ``g``, ``b``, ``a`` to a color string
+Converts ``r``, ``g``, ``b``, ``a`` to a color string, ``'rgba(r,g,b,a)'``.
 
 - `r` `<Number>`
 - `g` `<Number>`

@@ -1,5 +1,5 @@
 ### ``rgbToHex(r, g, b)``
-Converts ``r``, ``g``, ``b`` to a color hex string
+Converts ``r``, ``g``, ``b`` to a color hex string, ``'#RRGGBB'``.
 
 - `r` `<Number>`
 - `g` `<Number>`
