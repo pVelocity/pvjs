@@ -1,10 +1,9 @@
-pvjs
-=======
+# pvjs
 
 This is an npm module design to perform common uses in the pVelocity JSAPI2 framework.
 
-Getting Started
--------
+## Getting Started
+
 
 Install the ``pvjs`` module.
 
@@ -16,9 +15,9 @@ Use the require statement to load the module into the global namespace.
 require('pvjs');
 ```
 
-Methods
--------
-#Validation
+## Methods
+
+### Validation
 - [isArray](docs/validation/isType.md)
 - [isBoolean](docs/validation/isType.md)
 - [isDatabase](docs/validation/isType.md)
@@ -40,7 +39,7 @@ Methods
 - [isUrlDocExtension](docs/validation/isUrlDocExtension.md)
 - [isEmail](docs/validation/isEmail.md)
 
-#Color
+### Color
 - [colorToRgba](docs/color/colorToRgba.md)
 - [rgbaToColor](docs/color/rgbaToColor.md)
 - [combineColors](docs/color/combineColors.md)
@@ -56,7 +55,7 @@ Methods
 - [hslToHex](docs/color/hslToHex.md)
 - [hslToHsv](docs/color/hslToHsv.md)
 
-#Conversion
+### Conversion
 - [unescapeXml](docs/conversion/unescapeXml.md)
 - [escapeXml](docs/conversion/escapeXml.md)
 - [escapeHtml](docs/conversion/escapeHtml.md)
@@ -64,7 +63,7 @@ Methods
 - [convertStrToFloat](docs/conversion/convertStrToFloat.md)
 - [convertStrToDate](docs/conversion/convertStrToDate.md)
 
-#Arrays
+### Arrays
 - [ensureArray](docs/arrays/ensureArray.md)
 - [swapArray](docs/arrays/swapArray.md)
 - [hasArraySameElements](docs/arrays/hasArraySameElements.md)
@@ -72,7 +71,7 @@ Methods
 - [sortArrayKeyValueDesc](docs/arrays/sortArrayKeyValueDesc.md)
 - [matchedIndexofArray](docs/arrays/matchedIndexofArray.md)
 
-#Utility
+### Utility
 - [randomInt](docs/utility/randomInt.md)
 - [createHash](docs/utility/createHash.md)
 - [pathJoin](docs/utility/pathJoin.md)
@@ -88,8 +87,7 @@ Methods
 - [getUrls](docs/utility/getUrls.md)
 - [getTimeStamp](docs/utility/getTimeStamp.md)
 
-License
--------
+## License
 
 Copyright (c) 2016, pVelocity Inc
 
