@@ -77,7 +77,7 @@ require('pvjs');
 - [pathJoin](docs/utility/pathJoin.md)
 - [deepCopy](docs/utility/deepCopy.md)
 - [deepCopyJSonObj](docs/utility/deepCopyJSonObj.md)
-- [updateObjwithSameSchema](docs/utility/updateObjwithSameSchema.md)
+- [updateObjWithSameSchema](docs/utility/updateObjWithSameSchema.md)
 - [left](docs/utility/left.md)
 - [right](docs/utility/right.md)
 - [lTrim](docs/utility/lTrim.md)

@@ -116,7 +116,7 @@ var root = (typeof window === 'undefined') ? global : window;
             return obj;
         }
     };
-    root.PV.updateObjwithSameSchema = function(targeObj, sourceObj) {
+    root.PV.updateObjWithSameSchema = function(targeObj, sourceObj) {
         if (PV.isObject(targeObj) && PV.isObject(sourceObj)) {
             var sourceCopy = PV.deepCopyJSonObj(sourceObj);
             for (var sourceProp in sourceCopy) {
@@ -124,7 +124,7 @@ var root = (typeof window === 'undefined') ? global : window;
                     targeObj[sourceProp] = sourceCopy[sourceProp];
                 } else {
                     if (PV.isObject(sourceCopy[sourceProp])) {
-                        targeObj[sourceProp] = PV.updateObjwithSameSchema(PV.deepCopyJSonObj(targeObj[sourceProp]), sourceCopy[sourceProp]);
+                        targeObj[sourceProp] = PV.updateObjWithSameSchema(PV.deepCopyJSonObj(targeObj[sourceProp]), sourceCopy[sourceProp]);
                     } else {
                         targeObj[sourceProp] = sourceCopy[sourceProp];
                     }
