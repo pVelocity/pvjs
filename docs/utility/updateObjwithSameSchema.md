@@ -7,7 +7,6 @@ Imprints the values of ``sourceObj`` onto ``targeObj``.
 ```js
 PV.updateObjwithSameSchema({
 	a: 'bye'
-}
 }, {
 	a: {
 		b: {

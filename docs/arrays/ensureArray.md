@@ -4,5 +4,5 @@ Returns ``[]`` or ``[object]``.
 - `object` `<Object>`
 
 ```js
-var arr = PV.ensureArray('{a: 1}');
+var arr = PV.ensureArray({a: 1});
 ```

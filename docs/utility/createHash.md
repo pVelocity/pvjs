@@ -1,5 +1,5 @@
 ### ``createHash(str)``
-Returns md5 hash hex string of ``str``.
+Returns ``md5`` hash hex string of ``str``.
 
 - `str` `<String>`
 
