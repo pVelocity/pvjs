@@ -4,7 +4,6 @@ This is an npm module design to perform common uses in the pVelocity JSAPI2 fram
 
 ## Getting Started
 
-
 Install the ``pvjs`` module.
 
     npm install --save pvjs
@@ -60,6 +59,7 @@ require('pvjs');
 - [escapeXml](docs/conversion/escapeXml.md)
 - [escapeHtml](docs/conversion/escapeHtml.md)
 - [convertObjectToStr](docs/conversion/convertObjectToStr.md)
+- [convertStrToBool](docs/conversion/convertStrToBool.md)
 - [convertStrToFloat](docs/conversion/convertStrToFloat.md)
 - [convertStrToDate](docs/conversion/convertStrToDate.md)
 
@@ -69,7 +69,7 @@ require('pvjs');
 - [hasArraySameElements](docs/arrays/hasArraySameElements.md)
 - [sortArrayKeyValueAsc](docs/arrays/sortArrayKeyValueAsc.md)
 - [sortArrayKeyValueDesc](docs/arrays/sortArrayKeyValueDesc.md)
-- [matchedIndexofArray](docs/arrays/matchedIndexofArray.md)
+- [matchedIndexOfArray](docs/arrays/matchedIndexOfArray.md)
 
 ### Utility
 - [randomInt](docs/utility/randomInt.md)

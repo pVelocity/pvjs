@@ -336,23 +336,31 @@ var root = (typeof window === 'undefined') ? global : window;
             return false;
         }
     };
-    root.PV.sortArrayKeyValueAsc = function(a, b) {
-        if (a.extName === b.extName) {
-            return 0;
-        } else if (a.extName > b.extName) {
-            return 1;
+    root.PV.sortArrayKeyValueAsc = function(arr) {
+        if (PV.isArray(arr)) {
+            arr.sort(function(a, b) {
+                if (a.extName === b.extName) {
+                    return 0;
+                } else if (a.extName > b.extName) {
+                    return 1;
+                }
+                return -1;
+            });
         }
-        return -1;
     };
-    root.PV.sortArrayKeyValueDesc = function(a, b) {
-        if (a.extName === b.extName) {
-            return 1;
-        } else if (a.extName > b.extName) {
-            return 0;
+    root.PV.sortArrayKeyValueDesc = function(arr) {
+        if (PV.isArray(arr)) {
+            arr.sort(function(a, b) {
+                if (a.extName === b.extName) {
+                    return 1;
+                } else if (a.extName > b.extName) {
+                    return 0;
+                }
+                return -1;
+            });
         }
-        return -1;
     };
-    root.PV.matchedIndexofArray = function(matchArray, lookupArray) {
+    root.PV.matchedIndexOfArray = function(matchArray, lookupArray) {
         var matchedIndex = -1;
         if (PV.isArray(lookupArray) && PV.isArray(matchArray)) {
             for (var i = 0; i < lookupArray.length; i++) {
