@@ -91,14 +91,14 @@ var root = (typeof window === 'undefined') ? global : window;
         }
     };
     root.PV.deepCopy = function(obj) {
-        if (Object.prototype.toString.call(obj) === '[object Array]') {
+        if (PV.isArray(obj)) {
             var out = [];
             for (var i = 0; i < obj.length; i++) {
                 out[i] = PV.deepCopy(obj[i]);
             }
             return out;
         }
-        if (typeof obj === 'object') {
+        if (PV.isObject(obj)) {
             var out2 = {};
             for (var j in obj) {
                 out2[j] = PV.deepCopy(obj[j]);
