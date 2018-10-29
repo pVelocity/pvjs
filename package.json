@@ -11,9 +11,7 @@
     "url": "git+https://github.com/pVelocity/pvjs.git"
   },
   "keywords": [
-    "pVelocity",
-    "pvserver",
-    "pvserverHelper"
+    "pVelocity"
   ],
   "author": "\"Allen Allen Chung <allen.chung@pvelocity.com> (http://www.pvelocity.com)",
   "license": "ISC",
