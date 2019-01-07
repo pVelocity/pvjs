@@ -247,6 +247,11 @@ var root = (typeof window === 'undefined') ? global : window;
         }
         return true;
     };
+    root.PV.isEmptyValue = function(value) {
+        return PV.isNull(value) || PV.isUndefined(value) ||
+            value === '-N/A-' || value === '- N/A -' ||
+            (PV.isString(value) && value.trim().length === 0);
+    };
     root.PV.convertObjectToStr = function(object, separator, delimiter) {
         if (PV.isString(separator) === false) {
             separator = '=';
@@ -425,14 +430,27 @@ var root = (typeof window === 'undefined') ? global : window;
         return matchedIndex;
     };
     root.PV.colorToRgba = function(color) {
-        var colorStr = color.replace('rgba', '').replace('rgb', '').replace('(', '').replace(')', '');
-        var colorValues = colorStr.split(',');
-        return {
-            'r': colorValues[0],
-            'g': colorValues[1],
-            'b': colorValues[2],
-            'a': colorValues[3]
-        };
+        if (PV.isString(color)) {
+            var colorStr = color.replace('rgba', '').replace('rgb', '').replace('(', '').replace(')', '').replace(/ /g, '');
+            var colorValues = colorStr.split(',');
+            if (colorValues.length > 3) {
+                return {
+                    'r': parseInt(colorValues[0], 10),
+                    'g': parseInt(colorValues[1], 10),
+                    'b': parseInt(colorValues[2], 10),
+                    'a': parseFloat(colorValues[3])
+                };
+            } else {
+                return {
+                    'r': parseInt(colorValues[0], 10),
+                    'g': parseInt(colorValues[1], 10),
+                    'b': parseInt(colorValues[2], 10),
+                    'a': 1
+                };
+            }
+        } else {
+            return null;
+        }
     };
     root.PV.rgbaToColor = function(r, g, b, a) {
         return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
