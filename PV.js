@@ -184,6 +184,40 @@ var root = (typeof window === 'undefined') ? global : window;
         }
         return htmlStr;
     };
+    root.PV.encodeURIComponentFull = function(str) {
+        var result = '';
+        if (PV.isString(str)) {
+            for (let s of str) {
+                let h = s.charCodeAt(0).toString(16);
+                if (h.length % 2) {
+                    h = '0' + h;
+                }
+
+                result = result + '%' + h;
+            }
+        }
+        return result;
+    };
+    root.PV.encodeURIComponentCaseSensitive = function(str) {
+        var result = '';
+        if (PV.isString(str)) {
+            for (let s of str) {
+                let d = s.charCodeAt(0);
+                //only encode upper cases, A-z
+                if (d >= 65 && d <= 90) {
+                    let h = s.charCodeAt(0).toString(16);
+                    if (h.length % 2) {
+                        h = '0' + h;
+                    }
+                    result = result + '%' + h;
+                } else {
+                    //apply normal encodeURIComponent
+                    result = result + encodeURIComponent(s);
+                }
+            }
+        }
+        return result;
+    };
     root.PV.replaceAll = function(search, replace, str) {
         if (PV.isString(str)) {
             return str.replace(new RegExp(search, 'g'), replace);
