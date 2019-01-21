@@ -389,8 +389,8 @@ var root = (typeof window === 'undefined') ? global : window;
             if (array1[i] !== array2[i]) {
                 return false;
             }
-            return true;
         }
+        return true;
     };
     root.PV.hasArraySameElements = function(array1, array2) {
         if (array1 === null && array2 === null) {
