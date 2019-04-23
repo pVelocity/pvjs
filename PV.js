@@ -333,7 +333,7 @@ var root = (typeof window === 'undefined') ? global : window;
             defaultNum = defaultFloat;
         }
 
-        var num = parseFloat(string);
+        var num = parseFloat(string.replace(/ /g, ''));
         if (PV.isNumber(num)) {
             return num;
         } else {
