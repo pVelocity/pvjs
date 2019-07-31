@@ -332,8 +332,12 @@ var root = (typeof window === 'undefined') ? global : window;
         if (PV.isNumber(defaultFloat)) {
             defaultNum = defaultFloat;
         }
-
-        var num = parseFloat(string.replace(/[ ,]/g, ''));
+        var num = 0;
+        if (PV.isString(string)) {
+            num = parseFloat(string.replace(/[ ,]/g, ''));
+        } else {
+            num = parseFloat(string);
+        }
         if (PV.isNumber(num)) {
             return num;
         } else {
