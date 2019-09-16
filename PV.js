@@ -87,9 +87,13 @@ var root = (typeof window === 'undefined') ? global : window;
     root.PV.randomInt = function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-    root.PV.createHash = function(txt) {
+    root.PV.createHash = function(txt, len) {
         var crypto = require('crypto');
-        return crypto.createHash('md5').update(txt).digest('hex');
+        var hash = crypto.createHash('sha256').update(txt).digest('hex');
+        if (PV.isNumber(len)) {
+            hash = hash.slice(hash, len);
+        }
+        return hash;
     };
     root.PV.pathJoin = function(dir, dirname, delimiter) {
         if (PV.isString(delimiter) === false) {
