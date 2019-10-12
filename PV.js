@@ -90,9 +90,10 @@ var root = (typeof window === 'undefined') ? global : window;
     root.PV.createHash = function(txt, len) {
         var crypto = require('crypto');
         var hash = crypto.createHash('sha256').update(txt).digest('hex');
-        if (PV.isNumber(len)) {
-            hash = hash.slice(hash, len);
+        if (PV.isNumber(len) === false) {
+            len = 32;
         }
+        hash = hash.slice(hash, len);
         return hash;
     };
     root.PV.pathJoin = function(dir, dirname, delimiter) {
