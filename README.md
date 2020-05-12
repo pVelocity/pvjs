@@ -23,6 +23,7 @@ require('pvjs');
 - [isDate](docs/validation/isType.md)
 - [isElement](docs/validation/isType.md)
 - [isFunction](docs/validation/isType.md)
+- [isAsyncFunction](docs/validation/isType.md)
 - [isInfinity](docs/validation/isType.md)
 - [isNaN](docs/validation/isType.md)
 - [isNull](docs/validation/isType.md)
@@ -56,6 +57,7 @@ require('pvjs');
 - [hslToHsv](docs/color/hslToHsv.md)
 
 ### Conversion
+- [escapeFileName](docs/conversion/escapeFileName.md)
 - [unescapeXml](docs/conversion/unescapeXml.md)
 - [escapeXml](docs/conversion/escapeXml.md)
 - [escapeHtml](docs/conversion/escapeHtml.md)
@@ -94,6 +96,7 @@ require('pvjs');
 - [getUrls](docs/utility/getUrls.md)
 - [getTimestamp](docs/utility/getTimestamp.md)
 - [replaceAll](docs/utitlity/replaceAll.md)
+- [listFilesRecursive](docs/utitlity/listFilesRecursive.md)
 
 ## License
 

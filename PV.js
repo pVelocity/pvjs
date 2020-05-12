@@ -5,6 +5,9 @@
 /* jshint node: true */
 /* jshint unused: false */
 
+var fs = require('fs');
+var path = require('path');
+var crypto = require('crypto');
 var root = (typeof window === 'undefined') ? global : window;
 
 (function(root) {
@@ -74,6 +77,14 @@ var root = (typeof window === 'undefined') ? global : window;
 })(root);
 
 (function(root) {
+    root.PV.isEmail = function(inputText) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText.match(mailformat)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
     root.PV.round = function(value, exp) {
         //https://stackoverflow.com/questions/1726630/formatting-a-number-with-exactly-two-decimals-in-javascript
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round#Example:_Decimal_rounding
@@ -94,7 +105,6 @@ var root = (typeof window === 'undefined') ? global : window;
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
     root.PV.createHash = function(txt, len) {
-        var crypto = require('crypto');
         var hash = crypto.createHash('sha256').update(txt).digest('hex');
         if (PV.isNumber(len) === false) {
             len = 32;
@@ -111,7 +121,6 @@ var root = (typeof window === 'undefined') ? global : window;
             if (dirArray[0] === '.') {
                 dirArray[0] = dirname;
             }
-            var path = require('path');
             return path.join.apply(this, dirArray);
         } else {
             return dir;
@@ -159,6 +168,21 @@ var root = (typeof window === 'undefined') ? global : window;
             }
         }
         return targeObj;
+    };
+    root.PV.escapeFileName = function(fileName) {
+        if (PV.isString(fileName)) {
+            return fileName
+                .replace(/\//g, '_')
+                .replace(/\\/g, '_')
+                .replace(/:/g, '_')
+                .replace(/\*/g, '_')
+                .replace(/\?/g, '_')
+                .replace(/\</g, '_')
+                .replace(/\>/g, '_')
+                .replace(/\"/g, '_')
+                .replace(/\|/g, '_');
+        }
+        return fileName;
     };
     root.PV.unescapeXml = function(str) {
         if (PV.isString(str)) {
@@ -917,12 +941,20 @@ var root = (typeof window === 'undefined') ? global : window;
         }
         return yyyy + '-' + mm + '-' + dd + ' ' + hr + ':' + min + ':' + ss + ':' + ms;
     };
-    root.PV.isEmail = function(inputText) {
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (inputText.match(mailformat)) {
-            return true;
-        } else {
-            return false;
+    root.PV.listDirSync = function (dir) {
+        var listFiles = [];
+        if (fs.existsSync(dir)) {
+            var tempList = fs.readdirSync(dir);
+            for (var i = 0; i < tempList.length; i++) {
+                var filePath = path.join(dir, tempList[i]);
+                if (fs.lstatSync(filePath).isDirectory()) {
+                    var subList = PV.listDirSync(filePath);
+                    listFiles = listFiles.concat(subList);
+                } else {
+                    listFiles.push(filePath);
+                }
+            }
         }
+        return listFiles;
     };
 })(root);
