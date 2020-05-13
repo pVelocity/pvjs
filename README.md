@@ -83,6 +83,7 @@ require('pvjs');
 - [round](docs/utility/round.md)
 - [randomInt](docs/utility/randomInt.md)
 - [createHash](docs/utility/createHash.md)
+- [createGuid](docs/utility/createGuid.md)
 - [pathJoin](docs/utility/pathJoin.md)
 - [deepCopy](docs/utility/deepCopy.md)
 - [deepCopyJSonObj](docs/utility/deepCopyJSonObj.md)
@@ -96,7 +97,7 @@ require('pvjs');
 - [getUrls](docs/utility/getUrls.md)
 - [getTimestamp](docs/utility/getTimestamp.md)
 - [replaceAll](docs/utitlity/replaceAll.md)
-- [listFilesRecursive](docs/utitlity/listFilesRecursive.md)
+- [listDirSync](docs/utitlity/listDirSync.md)
 
 ## License
 

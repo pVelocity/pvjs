@@ -112,6 +112,13 @@ let root = (typeof window === 'undefined') ? global : window;
     hash = hash.slice(hash, len);
     return hash;
   };
+  root.PV.createGuid = function() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      let r = Math.random() * 16 | 0,
+        v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+  };
   root.PV.pathJoin = function(dir, dirname, delimiter) {
     if (PV.isString(delimiter) === false) {
       delimiter = '/';
@@ -903,10 +910,6 @@ let root = (typeof window === 'undefined') ? global : window;
       }
     }
     return index;
-  };
-  root.PV.getTimeStamp = function() {
-    // deprecated
-    return PV.getTimestamp();
   };
   root.PV.getTimestamp = function() {
     let currentDT = new Date();
