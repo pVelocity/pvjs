@@ -910,8 +910,8 @@ let root = (typeof window === 'undefined') ? global : window;
     }
     return index;
   };
-  root.PV.getTimestamp = function() {
-    let currentDT = new Date();
+  root.PV.getTimestamp = function(date) {
+    let currentDT = PV.isDate(date) ? date : new Date();
     let dd = currentDT.getDate();
     let mm = currentDT.getMonth() + 1; //January is 0!
     let yyyy = currentDT.getFullYear();
