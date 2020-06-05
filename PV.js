@@ -5,7 +5,6 @@
 /* jshint node: true */
 /* jshint unused: false */
 
-const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 let root = (typeof window === 'undefined') ? global : window;
@@ -943,21 +942,5 @@ let root = (typeof window === 'undefined') ? global : window;
       ms = '0' + ms;
     }
     return yyyy + '-' + mm + '-' + dd + ' ' + hr + ':' + min + ':' + ss + ':' + ms;
-  };
-  root.PV.listDirSync = function(dir) {
-    let listFiles = [];
-    if (fs.existsSync(dir)) {
-      let tempList = fs.readdirSync(dir);
-      for (let i = 0; i < tempList.length; i++) {
-        let filePath = path.join(dir, tempList[i]);
-        if (fs.lstatSync(filePath).isDirectory()) {
-          let subList = PV.listDirSync(filePath);
-          listFiles = listFiles.concat(subList);
-        } else {
-          listFiles.push(filePath);
-        }
-      }
-    }
-    return listFiles;
   };
 })(root);

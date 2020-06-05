@@ -97,7 +97,6 @@ require('pvjs');
 - [getUrls](docs/utility/getUrls.md)
 - [getTimestamp](docs/utility/getTimestamp.md)
 - [replaceAll](docs/utility/replaceAll.md)
-- [listDirSync](docs/utility/listDirSync.md)
 
 ## License
 
