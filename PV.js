@@ -100,7 +100,7 @@ let root = (typeof window === 'undefined') ? global : window;
   root.PV.randomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
-  if (typeof window !== 'undefined') {
+  if (typeof window === 'undefined') {
     root.PV.createHash = function(txt, len) {
       const crypto = require('crypto');
       let hash = crypto.createHash('sha256').update(txt).digest('hex');
