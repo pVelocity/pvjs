@@ -339,8 +339,10 @@ let root = (typeof window === 'undefined') ? global : window;
     }
     if (PV.isString(string)) {
       let strLower = string.toLowerCase();
-      let isFalse = strLower === 'false' || strLower === 'no';
-      let isTrue = strLower === 'true' || strLower === 'yes';
+      let falseStrings = ['false', 'no', '0', 'n', 'f'];
+      let trueStrings = ['true', 'yes', '1', 'y', 't'];
+      let isFalse = falseStrings.includes(strLower);
+      let isTrue = trueStrings.includes(strLower);
 
       if (isFalse) {
         return false;
