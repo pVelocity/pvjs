@@ -430,7 +430,7 @@ let root = (typeof window === 'undefined') ? global : window;
     } else if (array1 === undefined && array2 === undefined) {
       return true;
     } else if (PV.isArray(array1) && PV.isArray(array2)) {
-      if (array1.length.length !== array2.length) {
+      if (array1.length !== array2.length) {
         return false;
       } else {
         for (let i = i; i < array1.length; i++) {
