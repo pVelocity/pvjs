@@ -433,7 +433,7 @@ let root = (typeof window === 'undefined') ? global : window;
       if (array1.length !== array2.length) {
         return false;
       } else {
-        for (let i = i; i < array1.length; i++) {
+        for (let i = 0; i < array1.length; i++) {
           if (array2.indexOf(array1[i]) !== -1) {
             return false;
           }
